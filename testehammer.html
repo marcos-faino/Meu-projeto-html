@@ -49,7 +49,7 @@
 			texto.style.left = (Math.floor(ev.changedPointers[0].clientX - (texto.clientWidth/2))) + "px";
             });
 	    var aqui = new Hammer(document.getElementById('aqui'));
-		console.log(aqui.innerHTML);
+		console.log(document.getElementById('aqui').innerHTML);
 		
 		aqui.on("panend", function(ev){
 			ev.preventDefault();

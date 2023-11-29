@@ -29,7 +29,7 @@
         </div>
         <script src="https://hammerjs.github.io/dist/hammer.js"></script>
         <script>
-            var myElement = document.getElementById('myElement');
+            var myElement = document.getElementById('texto');
 
             // create a simple instance
             // by default, it only adds horizontal recognizers
@@ -42,9 +42,9 @@
             // listen to events...
             mc.on("panleft panright panup pandown tap press", function(ev) {
                 	ev.preventDefault();
-			this.style.position = "fixed";
-			this.style.top = ev.clientY;
-			this.style.left = ev.clientX;
+			texto.style.position = "fixed";
+			texto.style.top = ev.clientY;
+			texto.style.left = ev.clientX;
 		    	console.log("Y " + ev.clientY + " X " + ev.clientX);
             });
 		id=""

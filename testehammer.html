@@ -42,7 +42,10 @@
             // listen to events...
             mc.on("panleft panright panup pandown tap press", function(ev) {
                 myElement.textContent = ev.type +" gesture detected.";
-        });
+            });
+		texto.ontouchstart = function(){
+			aqui.innerHTML = "tocou aqui";
+		}
         </script>
 	</body>
 </html>

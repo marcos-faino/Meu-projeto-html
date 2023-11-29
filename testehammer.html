@@ -60,7 +60,7 @@
 		}
 		aqui.ontouchend = function(ev){
 			ev.preventDefault();
-			if(id !== "") {
+			if(id) {
 				elemento = document.getElementById(id);
 				this.innerHTML = elemento.innerHTML;
 				elemento.innerHTML = "";

@@ -56,6 +56,7 @@
 			this.style.position = "fixed";
 			this.style.top = ev.pageY;
 			this.style.left = ev.pageX;
+			aqui.innerHTML = "X: " + ev.pageX + "Y: " + ev.pageY
 		}
 		aqui.ontouchend = function(ev){
 			ev.preventDefault();

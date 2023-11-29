@@ -43,8 +43,25 @@
             mc.on("panleft panright panup pandown tap press", function(ev) {
                 myElement.textContent = ev.type +" gesture detected.";
             });
-		texto.ontouchstart = function(){
-			aqui.innerHTML = "tocou aqui";
+		id=""
+		function pegaid(ev){
+		       id = ev.target.id;
+		}
+		texto.ontouchstart = function(ev){
+			id = ev.target.id;
+			console.log(id);
+		}
+		texto.ontouchmove = function(ev){
+			ev.preventDefault();
+			this.style.position = "fixed";
+			this.style.top = ev.clientY;
+			this.style.left = ev.clientX;
+		}
+		aqui.ontouchend = function(ev){
+			ev.preventDefault();
+			elemento = document.getElementById(id);
+			this.innerHTML = elemento.innerHTML;
+			elemento.innerHTML = "";
 		}
         </script>
 	</body>

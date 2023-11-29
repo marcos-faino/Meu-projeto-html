@@ -53,8 +53,8 @@
 		
 		mc.on("panend", function(ev){
 			ev.preventDefault();
-			console.log('evento acionado');
 			atual = ev.srcElement || ev.target;
+			console.log(atual);			
 			if(atual == 'aqui'){
 				if(id && id!=="") {
 					elemento = document.getElementById(id);

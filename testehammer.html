@@ -60,6 +60,15 @@
 				elemento.innerHTML = "";
 			}
 		});
+		aqui.on("panend", function(ev){
+			ev.preventDefault();
+			console.log('evento acionado');
+			if(id && id!=="") {
+				elemento = document.getElementById(id);
+				aqui.innerHTML = elemento.innerHTML;
+				elemento.innerHTML = "";
+			}
+		});
         </script>
 	</body>
 </html>

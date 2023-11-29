@@ -54,8 +54,8 @@
 		texto.ontouchmove = function(ev){
 			ev.preventDefault();
 			this.style.position = "fixed";
-			this.style.top = ev.clientY;
-			this.style.left = ev.clientX;
+			this.style.top = ev.pageY;
+			this.style.left = ev.pageX;
 		}
 		aqui.ontouchend = function(ev){
 			ev.preventDefault();

@@ -43,8 +43,8 @@
             mc.on("panleft panright panup pandown tap press", function(ev) {
                 	ev.preventDefault();
 			texto.style.position = "fixed";
-			texto.style.top = (Math.floor(ev.changedPointers[0].clientY - (texto.style.witdh/2))) + "px";
-			texto.style.left = (Math.floor(ev.changedPointers[0].clientX - (texto.style.height/2))) + "px";
+			texto.style.top = ev.changedPointers[0].clientY + "px";
+			texto.style.left = (Math.floor(ev.changedPointers[0].clientX - (texto.style.width/2))) + "px";
 		    	console.log("Y " + ev.changedPointers[0].clientY + " X " + ev.changedPointers[0].clientX);
             });
 		id=""

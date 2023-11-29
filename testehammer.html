@@ -56,13 +56,15 @@
 			this.style.position = "fixed";
 			this.style.top = ev.pageY;
 			this.style.left = ev.pageX;
-			aqui.innerHTML = "X: " + ev.pageX + "Y: " + ev.pageY
+			aqui.innerHTML = "id: " + id;
 		}
 		aqui.ontouchend = function(ev){
 			ev.preventDefault();
-			elemento = document.getElementById(id);
-			this.innerHTML = elemento.innerHTML;
-			elemento.innerHTML = "";
+			if(id !== "") {
+				elemento = document.getElementById(id);
+				this.innerHTML = elemento.innerHTML;
+				elemento.innerHTML = "";
+			}
 		}
         </script>
 	</body>

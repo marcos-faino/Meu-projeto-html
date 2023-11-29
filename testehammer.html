@@ -41,7 +41,11 @@
 
             // listen to events...
             mc.on("panleft panright panup pandown tap press", function(ev) {
-                myElement.textContent = ev.type +" gesture detected.";
+                	ev.preventDefault();
+			this.style.position = "fixed";
+			this.style.top = ev.clientY;
+			this.style.left = ev.clientX;
+		    	console.log("Y " + ev.clientY + " X " + ev.clientX;
             });
 		id=""
 		function pegaid(ev){
@@ -50,13 +54,6 @@
 		texto.ontouchstart = function(ev){
 			id = ev.target.id;
 			console.log(id);
-		}
-		texto.ontouchmove = function(ev){
-			ev.preventDefault();
-			this.style.position = "fixed";
-			this.style.top = ev.pageY;
-			this.style.left = ev.pageX;
-			aqui.innerHTML = "id: " + id;
 		}
 		aqui.ontouchend = function(ev){
 			ev.preventDefault();

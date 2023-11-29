@@ -43,9 +43,9 @@
             mc.on("panleft panright panup pandown tap press", function(ev) {
                 	ev.preventDefault();
 			texto.style.position = "fixed";
-			texto.style.top = ev.clientY;
-			texto.style.left = ev.clientX;
-		    	console.log("Y " + ev.clientY + " X " + ev.clientX);
+			texto.style.top = ev.changedPointers[0].clientY;
+			texto.style.left = ev.changedPointers[0].clientX;
+		    	console.log("Y " + ev.changedPointers[0].clientY + " X " + ev.changedPointers[0].clientX);
             });
 		id=""
 		function pegaid(ev){

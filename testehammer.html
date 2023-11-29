@@ -54,11 +54,6 @@
 		mc.on("panend", function(ev){
 			ev.preventDefault();
 			console.log('evento acionado');
-			if(id && id!=="") {
-				elemento = document.getElementById(id);
-				this.innerHTML = elemento.innerHTML;
-				elemento.innerHTML = "";
-			}
 		});
 		aqui.on("panend", function(ev){
 			ev.preventDefault();

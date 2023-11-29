@@ -30,7 +30,6 @@
         <script src="https://hammerjs.github.io/dist/hammer.js"></script>
         <script>
             var myElement = document.getElementById('texto');
-	     console.log(myElement.clientWidth);
 
             // create a simple instance
             // by default, it only adds horizontal recognizers
@@ -41,28 +40,25 @@
             mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 
             // listen to events...
-            mc.on("panleft panright panup pandown tap press", function(ev) {
+	    id=""
+            mc.on("panleft panright panup pandown", function(ev) {
                 	ev.preventDefault();
+		    	id = ev.target.id;
 			texto.style.position = "fixed";
 			texto.style.top = (Math.floor(ev.changedPointers[0].clientY - (texto.clientHeight/2))) + "px";
 			texto.style.left = (Math.floor(ev.changedPointers[0].clientX - (texto.clientWidth/2))) + "px";
             });
-		id=""
-		function pegaid(ev){
-		       id = ev.target.id;
-		}
-		texto.ontouchstart = function(ev){
-			id = ev.target.id;
-			console.log(id);
-		}
-		aqui.ontouchend = function(ev){
+	    var aqui = new Hammer(aqui);
+		console.log(aqui.innerHTML);
+		
+		aqui.on("panend", function(ev){
 			ev.preventDefault();
-			if(id) {
+			if(id and id!=="") {
 				elemento = document.getElementById(id);
 				this.innerHTML = elemento.innerHTML;
 				elemento.innerHTML = "";
 			}
-		}
+		});
         </script>
 	</body>
 </html>

@@ -51,7 +51,7 @@
 	    var aqui = new Hammer(document.getElementById('aqui'));
 		console.log(document.getElementById('aqui').innerHTML);
 		
-		aqui.on("panend", function(ev){
+		mc.on("panend", function(ev){
 			ev.preventDefault();
 			console.log('evento acionado');
 			if(id && id!=="") {

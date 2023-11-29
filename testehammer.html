@@ -48,6 +48,11 @@
 			texto.style.top = (Math.floor(ev.changedPointers[0].clientY - (texto.clientHeight/2))) + "px";
 			texto.style.left = (Math.floor(ev.changedPointers[0].clientX - (texto.clientWidth/2))) + "px";
             });
+
+	    document.body.ontouchmove = function(ev){
+		    console.log(ev.target);
+	    }
+		
 	    var aqui = new Hammer(document.getElementById('aqui'));
 		console.log(document.getElementById('aqui').innerHTML);
 		

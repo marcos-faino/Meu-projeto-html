@@ -48,7 +48,7 @@
 			texto.style.top = (Math.floor(ev.changedPointers[0].clientY - (texto.clientHeight/2))) + "px";
 			texto.style.left = (Math.floor(ev.changedPointers[0].clientX - (texto.clientWidth/2))) + "px";
             });
-	    var aqui = new Hammer(aqui);
+	    var aqui = new Hammer(document.getElementById('aqui');
 		console.log(aqui.innerHTML);
 		
 		aqui.on("panend", function(ev){

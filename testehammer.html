@@ -48,18 +48,19 @@
 			texto.style.top = (Math.floor(ev.changedPointers[0].clientY - (texto.clientHeight/2))) + "px";
 			texto.style.left = (Math.floor(ev.changedPointers[0].clientX - (texto.clientWidth/2))) + "px";
             });
-
-	    document.body.ontouchmove = function(ev){
-		    console.log(ev.target);
-	    }
-		
-	    var aqui = new Hammer(document.getElementById('aqui'));
-		console.log(document.getElementById('aqui').innerHTML);
 		
 		mc.on("panend", function(ev){
 			ev.preventDefault();
-			atual = ev.srcElement || ev.target;
-			this.destroy();
+			pontosupesq = [aqui.clientX, aqui.clientWidth];
+			pontoinfdir = [aqui.clientWidth, aqui.clientHeight];
+			// se o toque estiver sobre o elemento "aqui" ...
+			if(ev.changedPointers[0].clientX >= aqui.clientX && ev.changedPointers[0].clientY >= aqui.clientY ){
+				if(ev.changePointers[0].clientX <= (aqui.clientX + aqui.clientWidth) && ev.changePointers[0].clientY <= (aqui.clientY + aqui.clientHeight){
+					origem = document.getElementById(id);
+					aqui.innerHTML = origem.innerHTML;
+					origem.innerHTML = "";
+				}
+			}
 		});
         </script>
 	</body>

@@ -41,6 +41,9 @@
 
             // listen to events...
 	    id=""
+
+	    var aqui = document.querySelector("#aqui");
+		
             mc.on("panleft panright panup pandown", function(ev) {
                 	ev.preventDefault();
 		    	id = ev.target.id;

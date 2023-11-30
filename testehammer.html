@@ -53,6 +53,7 @@
 			ev.preventDefault();
 			pontosupesq = [aqui.clientX, aqui.clientWidth];
 			pontoinfdir = [aqui.clientWidth, aqui.clientHeight];
+			console.log(pontosupesq, pontoinfdir);
 			// se o toque estiver sobre o elemento "aqui" ...
 			if(ev.changedPointers[0].clientX >= aqui.clientX && ev.changedPointers[0].clientY >= aqui.clientY ){
 				if(ev.changePointers[0].clientX <= (aqui.clientX + aqui.clientWidth) && ev.changePointers[0].clientY <= (aqui.clientY + aqui.clientHeight)){

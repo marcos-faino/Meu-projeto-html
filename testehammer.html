@@ -54,12 +54,11 @@
 		
 		mc.on("panend", function(ev){
 			ev.preventDefault();
-			pontosupesq = [aqui.clientX, aqui.clientWidth];
-			pontoinfdir = [aqui.clientWidth, aqui.clientHeight];
-			console.log(pontosupesq, pontoinfdir);
+			coord = aqui.getBoundingClientRect()
+			console.log(coord.left, coord.top);
 			// se o toque estiver sobre o elemento "aqui" ...
-			if(ev.changedPointers[0].clientX >= aqui.clientX && ev.changedPointers[0].clientY >= aqui.clientY ){
-				if(ev.changePointers[0].clientX <= (aqui.clientX + aqui.clientWidth) && ev.changePointers[0].clientY <= (aqui.clientY + aqui.clientHeight)){
+			if(ev.changedPointers[0].clientX >= coord.left && ev.changedPointers[0].clientY >= coord.top ){
+				if(ev.changePointers[0].clientX <= (coord.left + aqui.clientWidth) && ev.changePointers[0].clientY <= (coord.top + aqui.clientHeight)){
 					origem = document.getElementById(id);
 					aqui.innerHTML = origem.innerHTML;
 					origem.innerHTML = "";
